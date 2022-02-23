@@ -1,0 +1,2 @@
+class CircularList:
+    pass
