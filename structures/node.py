@@ -4,7 +4,7 @@ T = TypeVar('T')
 
 
 class Node:
-    def __init__(self, cancion: T):
-        self.cancion: T = cancion
-        self.cancion: Optional[Node] = None
+    def __init__(self, song: T):
+        self.song: T = song
+        self.next: Optional[Node] = None
 
