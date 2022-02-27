@@ -15,11 +15,11 @@ class MainView(QDialog):
         self.tableWidget.setColumnWidth(2, 100)
         self.browse.clicked.connect(self.browsefiles)
         self.songs = []
-        self.list_songs = CircularList()
-        self.show_anterior()
+        # self.list_songs = CircularList()
+        # self.show_anterior()
 
     def browsefiles(self):
-        self.filename = QFileDialog.getOpenFileName(self, 'Open file', '')
+        self.filename = QFileDialog.getOpenFileName(self, 'Open file', '*wav')
         self.flname.setText(self.filename[0])
 
         file = wave.open(self.filename[0], 'rb')
@@ -28,7 +28,7 @@ class MainView(QDialog):
         duration = frames / float(rate)
         name = self.filename[0].split('/').pop()
         self.songs.append(Song(name, int(duration), self.filename[0]))
-        self.list_songs.append(self.songs)
+        # self.list_songs.append(self.songs)
         self.show_songs()
 
     def show_songs(self):
