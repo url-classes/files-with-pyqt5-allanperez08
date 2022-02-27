@@ -28,7 +28,6 @@ class MainView(QDialog):
         duration = frames / float(rate)
         name = self.filename[0].split('/').pop()
         self.songs.append(Song(name, int(duration), self.filename[0]))
-        # self.list_songs.append(self.songs)
         self.show_songs()
 
     def show_songs(self):
