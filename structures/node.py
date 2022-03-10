@@ -1,2 +1,10 @@
+from typing import Optional, TypeVar
+
+T = TypeVar('T')
+
+
 class Node:
-    pass
+    def __init__(self, song: T):
+        self.song: T = song
+        self.next: Optional[Node] = None
+
